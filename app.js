@@ -16,6 +16,8 @@ let transporter = nodemailer.createTransport({
     }
 });
 
+app.get('/pathfinder', (req, res) => {res.sendFile(__dirname + '/views/pathfinder/path.html')})
+
 app.get('/*', (req, res) => {res.sendFile(__dirname + '/views/index.html')})
 
 app.post('/sendemail', (req, res) => {

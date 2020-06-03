@@ -33,6 +33,7 @@ const Projects = () => (
                     <div className="project__inner">
                         <h3 className="project__title">PathFinder</h3>
                         <p>Simple application implementing Dijkstra's algorithm for finding a path between 2 nodes. Built with Vanilla JS and JQuery.</p>
+                        <a href="/pathfinder">danielamsel.com/pathfinder</a>
                     </div>
                 </div>
             </div>
