@@ -22,7 +22,7 @@ const Projects = () => (
                     <div className="project__inner">
                         <h3 className="project__title">Codenames</h3>
                         <p>Mulitplayer card game for four players, with live mulitplayer using websockets. Built with Node, Socket.io, and Bootstrap.</p>
-                        <a href="http://www.danielamsel.com">codenames.danielamsel.com</a>
+                        <a href="http://codenames.danielamsel.com">codenames.danielamsel.com</a>
                     </div>
                 </div>
             </div>
