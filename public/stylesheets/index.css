@@ -309,12 +309,12 @@ nav.intro--hold{
 }
 
 .suckerpunch.project .project__front{
-  background-image: url('/public/images/suckerpunch.png');
+  background-image: url('/images/suckerpunch.png');
   background-color: whitesmoke;
 }
 
 .codenames.project .project__front{
-  background-image: url('/public/images/codenames.jpg');
+  background-image: url('/images/codenames.jpg');
 }
 
 .project__front{

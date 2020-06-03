@@ -2,14 +2,14 @@ import React from 'react';
 import AboutTool from './AboutTool';
 
 const tools = [
-    {name: 'javascript', image: '/public/images/logos/javascript-logo.jpg', content: 'Javascript'},
-    {name: 'nodejs', image: '/public/images/logos/nodejs-logo.jpg', content: 'Node JS'},
-    {name: 'reactjs', image: '/public/images/logos/react-logo.jpg', content: 'React JS'},
-    {name: 'socketio', image: '/public/images/logos/socketio-logo.jpg', content: 'Socket.io'},
-    {name: 'vr', image: '/public/images/logos/vr-logo.jpg', content: 'Virtual Reality'},
-    {name: 'knives', image: '/public/images/logos/knives-logo.jpg', content: 'High Carbon Sushi Knives'},
-    {name: 'espresso', image: '/public/images/logos/espresso-logo.jpg', content: 'Italian Espresso Machines'},
-    {name: 'theatre', image: '/public/images/logos/theatre-logo.jpg', content: 'Immersive Theatre'},
+    {name: 'javascript', image: './images/logos/javascript-logo.jpg', content: 'Javascript'},
+    {name: 'nodejs', image: './images/logos/nodejs-logo.jpg', content: 'Node JS'},
+    {name: 'reactjs', image: './images/logos/react-logo.jpg', content: 'React JS'},
+    {name: 'socketio', image: './images/logos/socketio-logo.jpg', content: 'Socket.io'},
+    {name: 'vr', image: './images/logos/vr-logo.jpg', content: 'Virtual Reality'},
+    {name: 'knives', image: './images/logos/knives-logo.jpg', content: 'High Carbon Sushi Knives'},
+    {name: 'espresso', image: './images/logos/espresso-logo.jpg', content: 'Italian Espresso Machines'},
+    {name: 'theatre', image: './images/logos/theatre-logo.jpg', content: 'Immersive Theatre'},
 ]
 
 const About = () => (
