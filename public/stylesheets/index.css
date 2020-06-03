@@ -317,6 +317,16 @@ nav.intro--hold{
   background-image: url('/images/codenames.jpg');
 }
 
+.pathfinder.project .project__front{
+  background-image: url('/images/pathfinder.jpg');
+}
+
+.danielamsel.project .project__front{
+  background-image: url('/images/danielamsel.png');
+  background-color: white;
+  object-fit: scale-down;
+}
+
 .project__front{
   display: flex;
   align-items: center;
