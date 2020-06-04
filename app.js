@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const sgMail = require('@sendgrid/mail');
 const nodemailer = require('nodemailer')
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,13 +33,12 @@ app.post('/sendemail', (req, res) => {
 
         transporter.sendMail(msg, (err, info) => {
             if (err){
-                console.log(err)
+                res.send(err)
             } else {
                 console.log(info)
+                res.redirect('/contact')
             }}
         )
-
-        res.redirect('/contact')
 })
 
 app.listen(process.env.PORT||3000, console.log('Starting server on port 3000'))
