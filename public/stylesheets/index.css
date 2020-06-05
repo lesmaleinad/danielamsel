@@ -1,4 +1,8 @@
-html, body, #app{
+:root{
+  --nav-width-lg: 20rem
+}
+
+tml, body, #app{
   height: 100%;
   width: 100vw;
   margin: 0;
@@ -98,9 +102,9 @@ nav{
   background-attachment: fixed;
 }
 
-nav.intro--hold{
+/* nav.intro--hold{
   animation: name duration timing-function delay iteration-count direction fill-mode;
-}
+} */
 
 /* @keyframes nav_drop_in */
 
@@ -153,7 +157,8 @@ nav.intro--hold{
 @media (min-width: 992px){
   nav{
     width: min-content;
-    margin: 0
+    margin: 0;
+    min-height: 100vh;
   }
 
   .nav h1{
@@ -169,7 +174,7 @@ nav.intro--hold{
 
   .nav .nav-item.nav-link{
     border-right: none;
-    width: 20rem;
+    width: var(--nav-width-lg);
     box-shadow: inset -1px 0px 1px 1px rgba(0,0,0,0.1);
     border-radius: 15px;
     border-bottom: 1px solid black;
@@ -197,13 +202,8 @@ nav.intro--hold{
   text-transform: uppercase;
   font-style: oblique;
   text-align: center;
-  animation: header-flow-in 400ms ease-in-out;
 }
 
-@keyframes header-flow-in{
-  from {opacity: 0; padding-right: 1.5rem}
-  to {opacity: 1; padding-right: 0;}
-}
 .page__content{
   width:100%;
   text-align: center;
@@ -229,6 +229,44 @@ nav.intro--hold{
   .page__text{
     font-size: 2rem;
   }
+}
+
+/* TRANSITION */
+
+.transition{
+  margin: 0;
+  padding: 0;
+}
+
+.transition--wrapper{
+  width: 100%;
+  max-width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.transition--in{
+  position: absolute;
+  height: 100%;
+  max-height: 100%;
+  animation: transition--in 600ms ease-in-out;
+  background-color: white;
+  z-index: -1;
+          box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
+  -webkit-box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
+     -moz-box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
+
+}
+
+@keyframes transition--in{
+  from{left: -100%;}
+  to{left: 0%;}
+}
+
+.transition--out{
+  position: relative;
+  width: 100%;
+  z-index: -2;
 }
 
 /* ABOUT */

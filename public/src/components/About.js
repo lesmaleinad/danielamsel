@@ -12,8 +12,8 @@ const tools = [
     {name: 'theatre', image: './images/logos/theatre-logo.jpg', content: 'Immersive Theatre'},
 ]
 
-const About = () => (
-    <div className='about page col'>
+const About = (props) => (
+    <div className={`about page col ${props.transition}`}>
         <h2 className="display-4">About</h2>
         <div className="page__content">
             <div className='page__text'>
