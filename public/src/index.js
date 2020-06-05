@@ -70,7 +70,7 @@ class PortfolioApp extends React.Component {
         const isGoingDown = this.pages.indexOf(newPage) > this.pages.indexOf(oldPage);
         
 
-        setTimeout(this.endTransition, 595)
+        setTimeout(this.endTransition, 600)
 
         return (
             <div className = "main row flex-column flex-lg-row">
