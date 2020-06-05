@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Projects = (props) => (
-    <div className={`projects page col ${props.transition}`}>
+const Projects = () => (
+    <div className='projects page'>
         <h2 className="display-4">Projects</h2>
         <div className="page__text">
 

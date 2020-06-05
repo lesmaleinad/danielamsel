@@ -2,7 +2,7 @@
   --nav-width-lg: 20rem
 }
 
-tml, body, #app{
+html, body, #app{
   height: 100%;
   width: 100vw;
   margin: 0;
@@ -12,8 +12,12 @@ tml, body, #app{
 
 .main{
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   margin: 0
+}
+
+.main .col{
+ padding: 0;
 }
 
 /* INTRO */
@@ -113,6 +117,7 @@ nav{
   text-align: center;
   width: 100%;
   margin: 0 0 0;
+  z-index: 10;
 }
 
 .nav__img {
@@ -157,8 +162,19 @@ nav{
 @media (min-width: 992px){
   nav{
     width: min-content;
+    min-height: 100%;
     margin: 0;
-    min-height: 100vh;
+  }
+
+  nav::before{
+    content: '';
+    height: 100vh;
+    width: inherit;
+    position: fixed;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    z-index: -1;
+    
   }
 
   .nav h1{
@@ -233,29 +249,31 @@ nav{
 
 /* TRANSITION */
 
-.transition{
+#transition{
   margin: 0;
   padding: 0;
+  height: 300vh
 }
 
 .transition--wrapper{
   width: 100%;
-  max-width: 100%;
   display:flex;
   justify-content: center;
+  z-index: -1;
 }
 
 .transition--in{
   position: absolute;
-  height: 100%;
-  max-height: 100%;
-  animation: transition--in 600ms ease-in-out;
+  animation: transition--in 600ms ease-out;
   background-color: white;
-  z-index: -1;
           box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
   -webkit-box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
      -moz-box-shadow: -1px 25px 25px 12px rgba(0,0,0,0.39);
 
+}
+
+.transition--in.reverse {
+  animation: transition--in 600ms ease-out reverse;
 }
 
 @keyframes transition--in{
@@ -264,9 +282,27 @@ nav{
 }
 
 .transition--out{
-  position: relative;
-  width: 100%;
+  position: absolute;
+  top: 0;
   z-index: -2;
+  animation: transition--out 600ms ease-out;
+}
+
+.transition--out.reverse{
+  animation: transition--out 600ms ease-out reverse;
+}
+
+@keyframes transition--out{
+  from{
+    opacity: 1;
+    margin-top: 0rem;
+    transform: scaleX(1.0);
+  }
+  to{
+    opacity: 0;
+    margin-top: 1rem;
+    transform: scaleX(0.99);
+  }
 }
 
 /* ABOUT */

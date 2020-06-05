@@ -52,7 +52,7 @@ class PortfolioApp extends React.Component {
                 return (
                     <div className = "main row flex-column flex-lg-row">
                         <Navigation pages={this.pages} header='Daniel Amsel' intro={false}/>
-                        {newPage}
+                        <div className='col'><div>{newPage}</div></div>
                     </div>
                     
                 )
@@ -64,14 +64,23 @@ class PortfolioApp extends React.Component {
     };
 
     startTransition(newPage, oldPage){
+
         this.nextPage = newPage;
-        setTimeout(this.endTransition, 600)
+
+        const isGoingDown = this.pages.indexOf(newPage) > this.pages.indexOf(oldPage);
+        
+
+        setTimeout(this.endTransition, 595)
+
         return (
             <div className = "main row flex-column flex-lg-row">
+
                 <Navigation pages={this.pages} header='Daniel Amsel' intro={false}/>
-                <div className="transition col row flex-column">
-                    <div className="transition--wrapper transition--in">{this.pageComponents[newPage]}</div>
-                    {React.cloneElement(this.pageComponents[oldPage], {transition: 'transition--out'})}
+
+                <div id="transition" className="col">
+                    <div className={"transition--wrapper " + (isGoingDown ? 'transition--out reverse' : 'transition--in')}>{this.pageComponents[newPage]}</div>
+                    <div className={"transition--wrapper " + (isGoingDown ? 'transition--in reverse' : 'transition--out')}>{this.pageComponents[oldPage]}</div>
+
                 </div>
             </div>
         )
