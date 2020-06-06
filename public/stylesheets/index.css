@@ -240,13 +240,18 @@ nav{
   text-align: center;
 }
 
-.page__content{
-  width:100%;
+.page h3{
+  font-weight: bold;
   text-align: center;
 }
 
+.page__content{
+  width:100%;
+}
+
 .page__text{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
   display: inline-block;
   width: fit-content;
   color: #45465ce7;
@@ -264,6 +269,11 @@ nav{
 
   .page__text{
     font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .page h3{
+    font-size: 2.25rem;
   }
 }
 
@@ -494,7 +504,7 @@ nav{
 
 /* CONTACT */
 
-.contact .underline{
+.underline{
   text-decoration: underline rgb(230, 230, 0);
 }
 
