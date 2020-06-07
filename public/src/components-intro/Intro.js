@@ -92,7 +92,7 @@ export default class Intro extends React.Component {
             setTimeout(this.navFloatIn, 50)
             setTimeout(this.highlightText, 500)
             setTimeout(this.finishNextText, 1000)
-            setTimeout(this.props.endIntro, 1500)
+            setTimeout(this.props.endIntro, 1100)
 
         }
 
