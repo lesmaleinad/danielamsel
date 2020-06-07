@@ -121,9 +121,7 @@ html, body, #app{
 /* NAVIGATION */
 
 nav{
-  background-color: #000000;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
-  background-attachment: fixed;
+  background-color: rgb(58, 58, 58);
 }
 
 /* nav.intro--hold{
@@ -136,15 +134,16 @@ nav{
   transition: top 500ms ease-in-out;
   text-align: center;
   width: 100%;
-  margin: 0 0 0;
+  margin: 0;
   z-index: 10;
 }
 
 .nav__top{
   margin: 0;
-  display: inline-flex;
+  display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 .nav__img {
@@ -153,16 +152,15 @@ nav{
   -webkit-box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
      -moz-box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
           box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
-  margin: 1.5rem 0 0 1.5rem;
+  margin: 1rem 1rem 0;
   border-radius: 50%;
 }
 
 .nav h1{
   font-weight: 400;
-  margin: 1rem auto;
-  width: 100%;
   font-size: 3rem;
   color: var(--nav-text-color);
+  align-self: flex-end;
 }
 
 .nav hr{
@@ -218,6 +216,7 @@ nav{
   .nav h1{
     font-size: 3rem;
     text-align: center;
+    align-self: center;
   }
 
   .nav__img {
@@ -461,7 +460,7 @@ nav{
   height: 100%;
   width: 100%;
   background-size: cover;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow:  0 1px 6px rgba(0,0,0,0.16);
   border-radius: 30px;
   background-color: whitesmoke;
 }
