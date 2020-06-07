@@ -67,12 +67,28 @@ class PortfolioApp extends React.Component {
 
         this.nextPage = newPage;
 
+        const wasIntro = oldPage === 'intro'
+
         const isGoingDown = this.pages.indexOf(newPage) > this.pages.indexOf(oldPage);
         
 
         setTimeout(this.endTransition, 600)
 
-        return (
+        if (wasIntro) {
+            return (
+                <div className = "main row flex-column flex-lg-row">
+
+                <Navigation pages={this.pages} header='Daniel Amsel' intro={false}/>
+
+                <div id="transition" className="col">
+                    <div className={"transition--wrapper transition--in"}>{this.pageComponents[newPage]}</div>
+                </div>
+            </div>
+            )
+        }
+
+        else return (
+
             <div className = "main row flex-column flex-lg-row">
 
                 <Navigation pages={this.pages} header='Daniel Amsel' intro={false}/>
@@ -93,10 +109,12 @@ class PortfolioApp extends React.Component {
 
 
     render(){ 
+        if (this.props.location.pathname === '/'){
+            this.currentPage = 'intro'
+            return <Intro pages={this.pages} endIntro={this.endIntro} />
+        }
 
-        return (this.props.location.pathname === '/') ? <Intro pages={this.pages} endIntro={this.endIntro} />
-
-        : this.getPage(this.props.location.pathname.slice(1))
+         else return this.getPage(this.props.location.pathname.slice(1))
     }
 }
 

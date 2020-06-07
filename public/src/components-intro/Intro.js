@@ -10,20 +10,21 @@ export default class Intro extends React.Component {
         this.state = {
             texts: [],
             highlight: false,
-            navOut: false,
-            header : '',
-            pages : ['HIDDEN', 'HIDDEN', 'HIDDEN']
+            navIn: false
         };
         
         this.handleNewText = this.handleNewText.bind(this);
         this.handleNextText = this.handleNextText.bind(this);
         this.finishNextText = this.finishNextText.bind(this);
         this.placeCursor = this.placeCursor.bind(this);
-        this.headerTypeOut = this.headerTypeOut.bind(this);
-        this.menuTypeOut = this.menuTypeOut.bind(this);
+        this.navFloatIn = this.navFloatIn.bind(this);
+        this.highlightText = this.highlightText.bind(this);
+        // this.headerTypeOut = this.headerTypeOut.bind(this);
+        // this.menuTypeOut = this.menuTypeOut.bind(this);
         
 
-        this.introIndex = 0;
+        this.introCharIndex = 0;
+        this.introLineIndex = 0;
         this.nextText = [
             'Hello, world!',
             'My name is Daniel Amsel.'
@@ -31,75 +32,84 @@ export default class Intro extends React.Component {
 
         this.cursorClass = '';
 
-        this.headerIndex = 0;
-        this.headerText = 'Daniel Amsel';
+        // this.headerIndex = 0;
+        // this.headerText = 'Daniel Amsel';
 
-        this.pages = this.props.pages.slice();
-        this.pageIndex = 0;
+        // this.pages = this.props.pages.slice();
+        // this.pageIndex = 0;
     }
 
     handleNewText(newText, index){
 
-        if (!this.state.texts[index]){
-            this.state.texts.push([]);
-        };
-
-        this.setState(() => (
-           this.state.texts[index] += newText
-        ))
+        this.setState(() => {
+            if (!this.state.texts[index]){
+                this.state.texts.push([]);
+            };
+            return this.state.texts[index] += newText
+           
+        })
         
     };
 
     handleNextText(){
 
-        let keyTime =  85 + Math.random() * 15;
+        let keyTime =  65 + Math.random() * 12;
 
-        if (!this.nextText[this.introIndex]){
-            this.introIndex++;
+        if (!this.nextText[this.introLineIndex][this.introCharIndex]){
+            this.introLineIndex++;
+            this.introCharIndex = 0;
         }
 
-        let str = this.nextText[this.introIndex]
+        let str = this.nextText[this.introLineIndex]
 
         if (str){
 
-            const nextText = str.slice(0,1);
-            this.nextText[this.introIndex] = str.slice(1)
+            const char = str[this.introCharIndex];
+            const nextChar = str[this.introCharIndex + 1];
 
-                if(nextText === ' ')                             {keyTime+=35}
+                if(char === ' ')         {keyTime+=35}
 
-                if(str.slice(1,2) === ',')                       {keyTime+=100}
+                if(nextChar === ',')     {keyTime+=100}
 
-                if(str.slice(1,2) === 'D' 
-                || str.slice(1,2) === 'A')                       {keyTime+=300}
+                if(nextChar === 'D' 
+                || nextChar === 'A')     {keyTime+=250}
 
-                if (str.slice(1,2) === '.')                      {keyTime+=300}
+                if (nextChar === '.')    {keyTime+=300}
 
-                if(this.nextText[this.introIndex].length === 0)  {keyTime+=600}
+                if (!!nextChar === false){keyTime+=500}
 
             this.cursorClass = ( keyTime>500 ) ? 'blink' : '';
 
-            this.handleNewText(nextText, this.introIndex);
+            this.handleNewText(char, this.introLineIndex);
 
-            setTimeout(this.handleNextText, keyTime)
+            this.introCharIndex++
+
+            setTimeout(this.handleNextText, keyTime)            
         } 
         
         else {
 
-            this.setState(()=>({navOut : true}))
-            setTimeout(this.headerTypeOut, 500)
+            setTimeout(this.navFloatIn, 50)
+            setTimeout(this.highlightText, 500)
+            setTimeout(this.finishNextText, 1000)
+            setTimeout(this.props.endIntro, 1500)
 
         }
 
     };
 
-    finishNextText(){
+    navFloatIn(){
+        this.setState(()=>({navIn: true}))
+ 
+    }
 
+    highlightText(){
         this.cursorClass = 'hidden';
+        this.setState(()=>({highlight: true}));        
+    }
 
-        this.setState(()=>({highlight: true}));
-
-        setTimeout(()=>{this.props.endIntro()}, 300)
-        
+    finishNextText(){
+        this.setState(()=>({texts: []}))        
     }
 
     placeCursor(text){
@@ -108,45 +118,45 @@ export default class Intro extends React.Component {
         }
     }
 
-    headerTypeOut(){
-        let keyTime =  85;
+    // headerTypeOut(){
+    //     let keyTime =  85;
 
-        let str = this.headerText[this.headerIndex]
+    //     let str = this.headerText[this.headerIndex]
 
-        if (str){
+    //     if (str){
 
-            this.headerIndex++;
+    //         this.headerIndex++;
 
-            this.setState((prevState)=>({header: prevState.header+str}))
+    //         this.setState((prevState)=>({header: prevState.header+str}))
 
-            setTimeout(this.headerTypeOut, keyTime)
-        } 
+    //         setTimeout(this.headerTypeOut, keyTime)
+    //     } 
         
-        else {
+    //     else {
 
-            setTimeout(this.menuTypeOut, 0)
+    //         setTimeout(this.menuTypeOut, 0)
 
-        }
-    }
+    //     }
+    // }
 
-    menuTypeOut(){
+    // menuTypeOut(){
 
-        if (this.pages[this.pageIndex]){
+    //     if (this.pages[this.pageIndex]){
 
-            const nextPages = this.state.pages.slice();
+    //         const nextPages = this.state.pages.slice();
 
-            nextPages.splice(this.pageIndex, 1, this.pages[this.pageIndex]);
+    //         nextPages.splice(this.pageIndex, 1, this.pages[this.pageIndex]);
 
-            this.pageIndex++;
+    //         this.pageIndex++;
 
-            setTimeout(this.menuTypeOut, 300);
+    //         setTimeout(this.menuTypeOut, 300);
 
-            this.setState(()=>({pages: nextPages}));
-        }
+    //         this.setState(()=>({pages: nextPages}));
+    //     }
 
-        else {setTimeout(this.finishNextText, 50)}
+    //     else {setTimeout(this.finishNextText, 50)}
         
-    };
+    // };
 
     componentDidMount(){
         this.handleNextText()
@@ -155,8 +165,8 @@ export default class Intro extends React.Component {
     render(){
         return (
             <div className="main row flex-column flex-lg-row">
-                <Navigation pages={this.state.pages} header={this.state.header} intro={true} navOut={this.state.navOut}/>
-                <div id="intro" className=''>
+                <Navigation pages={this.props.pages} intro={true} navIn={this.state.navIn}/>
+                <div id="intro">
                     {
                         this.state.texts.map((introText, key) => (
                             <IntroText 

@@ -67,27 +67,46 @@ html, body, #app{
   }
 
 .introText{
-    margin: 1rem auto;
+    margin: 0 auto 2rem;
     max-width: 100%;
     font-size: 3rem;
     flex-wrap: break-word;
     line-height: 3.5rem;
 }
 
-.introFade {
+.intro {
+  opacity: 0;
+}
+
+.intro--in {
   position: relative;
-  animation: fade_in 300ms ease-in-out;
+  animation: fade_in 600ms ease-in-out;
 }
 
 @keyframes fade_in{
   0% {
     opacity: 0;
-    bottom: .5rem;
+    top: .25rem;
   }
 
   100% {
     opacity: 1;
-    bottom: 0;
+    top: 0;
+  }
+}
+
+@media (min-width: 992px){
+  @keyframes fade_in {
+    from{
+      opacity: 0;
+      left: .25rem;
+    }
+
+    to{
+      opacity: 1;
+      left: 0;
+    }
+    
   }
 }
 
@@ -130,7 +149,7 @@ nav{
 
 .nav__img {
   max-width: 12rem;
-  max-height: 150px;
+  max-height: 125px;
   -webkit-box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
      -moz-box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
           box-shadow: -1px -1px 11px 1px rgba(0,0,0,0.35);
