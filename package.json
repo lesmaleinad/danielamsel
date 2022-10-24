@@ -5,6 +5,7 @@
 	"main": "app.js",
 	"scripts": {
 		"build": "webpack --watch",
+		"build-prod": "webpack --config webpack.prod.js",
 		"format": "prettier --write ."
 	},
 	"author": "Daniel Amsel",
