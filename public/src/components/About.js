@@ -51,8 +51,7 @@ const About = (n) => (
 			<div className="page__text">
 				<p>
 					I am a passionate developer, artist, and entrepreneur currently working as
-					the Operations Manager for{' '}
-					<a href="http://creekside.cafe">Grounds for Coffee Creekside Cafe</a>.
+					a Software Engineer for <a href="https://pos.toasttab.com/">Toast Inc</a>.
 				</p>
 			</div>
 
