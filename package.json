@@ -4,28 +4,25 @@
 	"description": "Portfolio and general information for Daniel Amsel's work in tech, arts, and business.",
 	"main": "app.js",
 	"scripts": {
-		"build": "webpack --watch",
-		"deploy": "live-server --entry-file=./views/index.html"
+		"build": "webpack --watch"
 	},
 	"author": "Daniel Amsel",
 	"license": "ISC",
 	"dependencies": {
-		"@sendgrid/mail": "^7.1.1",
 		"body-parser": "^1.19.0",
-		"express": "^4.17.1",
-		"nodemailer": "^6.4.8",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-router-dom": "^5.2.0"
+		"express": "^4.18.2",
+		"nodemailer": "^6.8.0",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"react-router-dom": "^5.3.4"
 	},
 	"devDependencies": {
-		"webpack": "^4.43.0",
-		"@babel/core": "^7.9.6",
-		"babel-loader": "^8.1.0",
-		"@babel/preset-env": "^7.9.6",
-		"@babel/preset-react": "^7.9.4",
-		"live-server": "^1.2.1",
-		"webpack-cli": "^3.3.11"
+		"@babel/core": "^7.19.6",
+		"@babel/preset-env": "^7.19.4",
+		"@babel/preset-react": "^7.18.6",
+		"babel-loader": "^8.2.5",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
 	},
 	"prettier": {
 		"trailingComma": "none",
