@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
+require('dotenv').config();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
@@ -37,7 +39,7 @@ app.post('/sendemail', (req, res) => {
 		})
 		.sendMail(msg, (err, info) => {
 			if (err) {
-				res.send(err);
+				res.send(err.message);
 			} else {
 				console.log(info);
 				res.redirect('/contact');
