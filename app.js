@@ -6,15 +6,6 @@ const nodemailer = require('nodemailer');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-let transporter = nodemailer.createTransport({
-	port: '587',
-	host: 'smtp-mail.outlook.com',
-	auth: {
-		user: 'lesmaleinad@hotmail.com',
-		pass: process.env.EMAIL_PASS
-	}
-});
-
 app.get('/pathfinder', (req, res) => {
 	res.sendFile(__dirname + '/views/pathfinder/path.html');
 });
@@ -26,8 +17,8 @@ app.get('/*', (req, res) => {
 app.post('/sendemail', (req, res) => {
 	const { email: replyTo, name, subject, content: text } = req.body;
 	const msg = {
-		to: 'lesmaleinad@hotmail.com',
-		from: 'lesmaleinad@hotmail.com',
+		to: process.env.EMAIL_USER,
+		from: process.env.EMAIL_USER,
 		replyTo,
 		subject: `${name}: ${subject}`,
 		text
@@ -35,17 +26,26 @@ app.post('/sendemail', (req, res) => {
 
 	console.log(msg);
 
-	transporter.sendMail(msg, (err, info) => {
-		if (err) {
-			res.send(err);
-		} else {
-			console.log(info);
-			res.redirect('/contact');
-		}
-	});
+	nodemailer
+		.createTransport({
+			port: process.env.EMIAL_PORT,
+			host: process.env.EMAIL_HOST,
+			auth: {
+				user: process.env.EMAIL_USER,
+				pass: process.env.EMAIL_PASS
+			}
+		})
+		.sendMail(msg, (err, info) => {
+			if (err) {
+				res.send(err);
+			} else {
+				console.log(info);
+				res.redirect('/contact');
+			}
+		});
 });
 
 app.listen(
 	process.env.PORT || 3000,
-	console.log('Starting server on port 3000')
+	console.log(`Starting server on port ${process.env.PORT || 3000}`)
 );
