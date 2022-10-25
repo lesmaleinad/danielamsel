@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/pathfinder', (req, res) => {
-	res.sendFile(__dirname + '/views/pathfinder/path.html');
+	res.sendFile(__dirname + '/public/pathfinder/path.html');
 });
 
 app.get('/*', (req, res) => {

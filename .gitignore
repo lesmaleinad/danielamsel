@@ -3,3 +3,4 @@ sendgrid.env
 /test
 /public/scripts
 /tmp
+/public/pathfinder

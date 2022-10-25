@@ -39,9 +39,9 @@ const Projects = () => (
 						<h3 className="project__title">PathFinder</h3>
 						<p>
 							Simple application implementing Dijkstra's algorithm for finding a path
-							between 2 nodes. Built with Vanilla JS.
+							between 2 nodes. Built with vanilla JS.
 						</p>
-						<a href="/pathfinder/path.html">danielamsel.com/pathfinder/path.html</a>
+						<a href="/pathfinder">danielamsel.com/pathfinder</a>
 					</div>
 				</div>
 			</div>
