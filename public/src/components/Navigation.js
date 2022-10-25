@@ -19,7 +19,7 @@ export default class Navigation extends React.Component {
 					<div className="nav__top">
 						<img
 							className="nav__img"
-							src=".\images\me.jpg"
+							src="./images/src/me.jpg"
 							alt="A picture of Daniel Amsel"
 						/>
 						<h1 className="header-2 mt-lg-3">Daniel Amsel</h1>

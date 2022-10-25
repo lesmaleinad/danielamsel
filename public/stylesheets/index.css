@@ -444,20 +444,20 @@ nav {
 }
 
 .suckerpunch.project .project__front {
-	background-image: url('/images/suckerpunch.png');
+	background-image: url('/images/src/suckerpunch.png');
 	background-color: whitesmoke;
 }
 
 .codenames.project .project__front {
-	background-image: url('/images/codenames.jpg');
+	background-image: url('/images/src/codenames.jpg');
 }
 
 .pathfinder.project .project__front {
-	background-image: url('/images/pathfinder.png');
+	background-image: url('/images/src/pathfinder.png');
 }
 
 .danielamsel.project .project__front {
-	background-image: url('/images/danielamsel.png');
+	background-image: url('/images/src/danielamsel.png');
 	background-color: white;
 	object-fit: scale-down;
 }
