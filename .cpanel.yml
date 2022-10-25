@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - source /home/suckerpu/nodevenv/repositories/danielamsel/16/bin/activate && cd /home/suckerpu/repositories/danielamsel
     - npm install
     - npm run build-prod
-    - node app.js
+    - touch -m tmp/restart.txt
