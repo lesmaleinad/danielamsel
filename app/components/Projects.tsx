@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Projects = () => (
 	<div className="projects page">
 		<h2 className="display-4">Projects</h2>

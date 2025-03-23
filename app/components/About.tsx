@@ -1,4 +1,3 @@
-import React from 'react';
 import AboutTool from './AboutTool';
 
 const tools = [
@@ -44,7 +43,7 @@ const tools = [
 	}
 ];
 
-const About = (n) => (
+const About = () => (
 	<div className="about page">
 		<h2 className="display-4">About</h2>
 		<div className="page__content">

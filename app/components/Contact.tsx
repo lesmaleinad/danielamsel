@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Contact = () => (
 	<div className="contact page">
 		<h2 className="display-4">Contact</h2>
@@ -31,8 +29,8 @@ const Contact = () => (
 				<label className="inp" htmlFor="inp">
 					<textarea
 						name="content"
-						rows="6"
-						cols="35"
+						rows={6}
+						cols={35}
 						placeholder="&nbsp;"
 						required={true}
 					></textarea>

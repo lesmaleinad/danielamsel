@@ -6,14 +6,14 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/pathfinder', (req, res) => {
-	res.sendFile(__dirname + '/public/pathfinder/path.html');
+	res.sendFile(__dirname + '/dist/pathfinder/path.html');
 });
 
 app.get('/*', (req, res) => {
-	res.sendFile(__dirname + '/views/index.html');
+	res.sendFile(__dirname + '/dist/index.html');
 });
 
 app.post('/sendemail', (req, res) => {

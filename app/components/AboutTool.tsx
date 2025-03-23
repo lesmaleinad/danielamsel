@@ -1,6 +1,10 @@
-import React from 'react';
+interface Props {
+	name: string;
+	image: string;
+	content: string;
+}
 
-const AboutTool = (props) => (
+const AboutTool = (props: Props) => (
 	<div className={`about__tool ${props.name} col-6 col-sm-4`}>
 		<img src={props.image}></img>
 		<div className={`name`}>

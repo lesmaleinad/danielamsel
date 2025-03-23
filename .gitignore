@@ -2,5 +2,4 @@
 .env
 /test
 /public/scripts
-/tmp
-/public/pathfinder
+/dist
