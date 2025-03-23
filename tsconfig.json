@@ -44,7 +44,7 @@
 			"~/*": ["./app/*"]
 		},
 		"rootDirs": [".", "./.react-router/types"], // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
-		"types": ["node", "vite/client"],
+		"types": ["vite/client"],
 		// "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
 		// "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
 		// "allowImportingTsExtensions": true,               /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
