@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import Intro from './components-intro/Intro';
+import Intro from './components/Intro';
 import Navigation from './components/Navigation';
 import {
 	BrowserRouter,
