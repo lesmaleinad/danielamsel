@@ -11,7 +11,9 @@ const Projects = () => (
 							Website for my experimental research theatre group based in Salt Lake
 							City. Built with Node, JQuery, and Semantic UI.
 						</p>
-						<a href="http://www.suckerpunchforever.com">www.suckerpunchforever.com</a>
+						<a href="https://www.suckerpunchforever.com">
+							www.suckerpunchforever.com
+						</a>
 					</div>
 				</div>
 			</div>
@@ -25,7 +27,7 @@ const Projects = () => (
 							Multiplayer card game for four players, with live updates using
 							websockets. Built with Node, Socket.io, and Bootstrap.
 						</p>
-						<a href="http://codenames.danielamsel.com">codenames.danielamsel.com</a>
+						<a href="https://codenames.danielamsel.com">codenames.danielamsel.com</a>
 					</div>
 				</div>
 			</div>
@@ -39,7 +41,9 @@ const Projects = () => (
 							Simple application implementing Dijkstra's algorithm for finding a path
 							between 2 nodes. Built with vanilla JS.
 						</p>
-						<a href="/pathfinder">danielamsel.com/pathfinder</a>
+						<a href="https://pathfinder.danielamsel.com">
+							pathfinder.danielamsel.com
+						</a>
 					</div>
 				</div>
 			</div>
