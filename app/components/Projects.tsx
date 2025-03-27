@@ -9,7 +9,7 @@ const Projects = () => (
 						<h3 className="project__title">Suckerpunch</h3>
 						<p>
 							Website for my experimental research theatre group based in Salt Lake
-							City. Built with Node, JQuery, and Semantic UI.
+							City.
 						</p>
 						<a href="https://www.suckerpunchforever.com">
 							www.suckerpunchforever.com
@@ -24,10 +24,9 @@ const Projects = () => (
 					<div className="project__inner">
 						<h3 className="project__title">Codenames</h3>
 						<p>
-							Multiplayer card game for four players, with live updates using
-							websockets. Built with Node, Socket.io, and Bootstrap.
+							Multiplayer card game for four players, with live updates using WebRTC.
 						</p>
-						<a href="https://codenames.danielamsel.com">codenames.danielamsel.com</a>
+						<a href="#">WORK IN PROGRESS</a>
 					</div>
 				</div>
 			</div>
@@ -53,10 +52,7 @@ const Projects = () => (
 				<div className="project__body">
 					<div className="project__inner">
 						<h3 className="project__title">This Website</h3>
-						<p>
-							Built with Express, Node, and React for tight response, controlled
-							animation, and fast loading.
-						</p>
+						<p>Built with Typescript, React, and Vite.</p>
 					</div>
 				</div>
 			</div>
