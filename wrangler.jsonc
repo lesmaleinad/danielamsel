@@ -5,11 +5,5 @@
 	"d1_databases": [],
 	"vars": {},
 	"compatibility_flags": ["nodejs_compat"],
-	"compatibility_date": "2024-09-23",
-	"send_email": [
-		{
-			"name": "EMAIL",
-			"destination_address": "me@danielamsel.com"
-		}
-	]
+	"compatibility_date": "2024-09-23"
 }
