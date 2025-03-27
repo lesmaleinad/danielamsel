@@ -2,44 +2,36 @@ import AboutTool from './AboutTool';
 
 const tools = [
 	{
-		name: 'javascript',
-		image: './images/logos/javascript-logo.jpg',
-		content: 'Javascript'
+		image: './images/logos/typescript-logo.jpg',
+		content: 'Typescript'
 	},
 	{
-		name: 'nodejs',
+		image: './images/logos/kotlin-logo.jpg',
+		content: 'Kotlin'
+	},
+	{
+		image: './images/logos/java-logo.jpg',
+		content: 'Java'
+	},
+	{
 		image: './images/logos/nodejs-logo.jpg',
 		content: 'Node JS'
 	},
 	{
-		name: 'reactjs',
 		image: './images/logos/react-logo.jpg',
-		content: 'React JS'
+		content: 'React'
 	},
 	{
-		name: 'socketio',
-		image: './images/logos/socketio-logo.jpg',
-		content: 'Socket.io'
+		image: './images/logos/gradle-logo.jpg',
+		content: 'Gradle'
 	},
 	{
-		name: 'vr',
-		image: './images/logos/vr-logo.jpg',
-		content: 'Virtual Reality'
+		image: './images/logos/bazel-logo.jpg',
+		content: 'Bazel'
 	},
 	{
-		name: 'knives',
-		image: './images/logos/knives-logo.jpg',
-		content: 'High Carbon Sushi Knives'
-	},
-	{
-		name: 'espresso',
-		image: './images/logos/espresso-logo.jpg',
-		content: 'Italian Espresso Machines'
-	},
-	{
-		name: 'theatre',
-		image: './images/logos/theatre-logo.jpg',
-		content: 'Immersive Theatre'
+		image: './images/logos/jenkins-logo.jpg',
+		content: 'Jenkins'
 	}
 ];
 
@@ -49,8 +41,9 @@ const About = () => (
 		<div className="page__content">
 			<div className="page__text">
 				<p>
-					I am a passionate developer, artist, and entrepreneur currently working as
-					a Software Engineer for <a href="https://pos.toasttab.com/">Toast Inc</a>.
+					I am a curious and capable developer, artist, and entrepreneur working as a
+					Senior Software Engineer at{' '}
+					<a href="https://pos.toasttab.com/">Toast Inc</a>.
 				</p>
 			</div>
 
@@ -59,17 +52,12 @@ const About = () => (
 			<div className="page__text">
 				<div>
 					<p>
-						I work to create efficient and elegant structures for high-impact
-						experiences. Here are some tools that I've used to do it:
+						I build efficient and scalable systems in many environements with lots of
+						different tools. I'm always eager to learn more!
 					</p>
 					<div className="about__tools row justify-content-center">
-						{tools.map((t) => (
-							<AboutTool
-								name={t.name}
-								image={t.image}
-								content={t.content}
-								key={t.name}
-							/>
+						{tools.map((t, i) => (
+							<AboutTool image={t.image} content={t.content} key={i} />
 						))}
 					</div>
 				</div>
@@ -83,22 +71,29 @@ const About = () => (
 					I have a <span className="underline">BFA in Theatre</span> from the
 					University of Utah, where I worked in acting, directing, writing, and
 					project management. I’ve been in dozens of productions, acting as
-					everything from a chorus member to the title character, and I’ve
-					accumulated soft skills in collaborative creation and design that other
-					developers will not have. For my senior project, I developed a VR app that
-					integrated with an immersive theatre piece{' '}
+					everything from a chorus member to the title character. For my senior
+					project, I developed a VR app that integrated with an immersive theatre
+					piece{' '}
 					<a href="https://dailyutahchronicle.com/2017/04/19/student-play-purgatory-provides-experience-danger-safety/">
 						that I wrote
 					</a>
-					. That's when I knew I loved developement.
+					.
 				</p>
-				<h3>A Theater Person that's a Dev? Seriously?</h3>
+				<h3>Any fun hobbies?</h3>
 				<p>
-					I've always been technical minded, and I learn wicked fast. I’ve developed
-					small games as a child, worked with robots in school, and excelled in math.
-					I believe my abilities to solve problems technically and creatively are
-					part of the same skillset. Both are vital in full stack web development.
+					I love traveling, cooking (I was a sushi chef!), gaming in virtual reality,
+					3D printing dungeons and dragons characters, building battle bots, playing
+					saxophone, hiking, pickleball, and adding to this list.
 				</p>
+				<p>
+					All of my hobbies are even better when I get to do them with my beautiful
+					wife and daughter.
+				</p>
+				<img
+					className="img-thumbnail p-4"
+					src="images/me-in-nature.jpg"
+					alt="Picture of me and my wife travelling"
+				/>
 			</div>
 		</div>
 	</div>

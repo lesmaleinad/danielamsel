@@ -382,6 +382,7 @@ nav {
 .about__tool img {
 	height: 100%;
 	width: 100%;
+	filter: grayscale(80%);
 	object-fit: contain;
 	opacity: 0.3;
 }
