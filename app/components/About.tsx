@@ -14,10 +14,6 @@ const tools = [
 		content: 'Java'
 	},
 	{
-		image: './images/logos/nodejs-logo.jpg',
-		content: 'Node JS'
-	},
-	{
 		image: './images/logos/react-logo.jpg',
 		content: 'React'
 	},
@@ -32,6 +28,10 @@ const tools = [
 	{
 		image: './images/logos/jenkins-logo.jpg',
 		content: 'Jenkins'
+	},
+	{
+		image: './images/logos/aws-logo.jpg',
+		content: 'AWS'
 	}
 ];
 
