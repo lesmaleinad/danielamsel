@@ -17,6 +17,7 @@
 		"body-parser": "^1.19.0",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
+		"mimetext": "^3.0.27",
 		"nodemailer": "^6.8.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",

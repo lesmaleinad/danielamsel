@@ -1,1 +1,0 @@
-{"root":["./vite.config.ts","./app/index.tsx","./app/components/about.tsx","./app/components/abouttool.tsx","./app/components/contact.tsx","./app/components/navigation.tsx","./app/components/projects.tsx","./app/components/navbarstate.ts","./app/components-intro/blinkcursor.tsx","./app/components-intro/intro.tsx"],"version":"5.8.2"}

@@ -3,3 +3,5 @@
 /test
 /public/scripts
 /dist
+/.wrangler
+tsconfig.tsbuildinfo
